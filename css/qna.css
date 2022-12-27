@@ -1,0 +1,54 @@
+#qna{
+	display: none;
+}
+
+.qBox{
+	/* background-color: whitesmoke; */
+	text-align: center;
+	border-radius: 20px;
+	font-size: 40px;
+	width: 80%;
+	
+}
+
+.qTitle{
+	/* background-color: whitesmoke; */
+	text-align: center;
+	border-radius: 20px;
+	font-size: 40px;
+	width: 80%;
+	
+}
+
+.answerList{
+	background-color: whitesmoke;
+	border-radius: 20px;
+	display: block;
+	width: 80%;
+	font-size: 46px;
+}
+
+/* 마우스 올렸을때 반응하는 CSS */
+.answerList:hover, .answerList:focus{
+	background-color: #FCF9BE;
+	color: black;
+}
+
+.status{
+	height: 10px;
+	width: 80%;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.statusBar{
+	height: 100%;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+38,ff7f04+58 */
+background: #ffb76b; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffb76b 0%, #ffa73d 38%, #ff7f04 58%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffb76b 0%,#ffa73d 38%,#ff7f04 58%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffb76b 0%,#ffa73d 38%,#ff7f04 58%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
+
+
+}

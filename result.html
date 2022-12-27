@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="author" content="PandaCoding">
+  	<meta name="keywords" content="강아지 mbti">
+  	<meta name="description" content="강아지 mbti">
+
+  	<!-- sns share -->
+  	<meta property="og:url" content="https://twelvelovetype.netlify.app" />
+  	<meta property="og:title" content="강아지 mbti" />
+  	<meta property="og:type" content="website" />
+ 	<meta property="og:image" content="img/share.png" />
+  	<meta property="og:description" content="mbti로 알아보는 강아지유형" />
+
+  	<!--favicon-->
+  	<link rel="shortcut icon" href="img/favicon.ico">
+  	<link rel="apple-touch-icon-precomposed" href="img/favicon.ico" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/default.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/animation.css">
+	<link rel="stylesheet" href="./css/result.css">
+	
+  	<style>
+	   	p1{
+		    font-size : 40px;
+	   	 }
+  	</style>
+	<!-- html2canvas -->
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+  		Kakao.init('61118627ca351c12bb5ec566b1b8730b'); // 사용하려는 앱의 JavaScript 키 입력
+		Kakao.isInitialized();
+	</script>
+</head>
+
+<body>	
+    <section id="result" class="container" style='background-color: #ffe4b5'>
+		<div class="mx-auto my-5 pd-5 pt-5 px-3">
+		<div>
+			<div id = 'screenshot'>
+			<h1>당신의 결과는?!</h1>
+      		<div class="resultname">
+				
+      		</div>
+			
+      		<div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto" height="600" width='400'>
+					<img id = "imgArea" src = "#" height="500" width='350'> 
+			</div>		
+	
+      		<div class="resultDesc">
+
+      		</div>
+			
+	  		<div class="resultDisease">
+			
+			</div>
+			</div>
+			<button type="button" class="kakao mt-3 py-2 px-3" onclick="js:kakaoShare()"><image src="./img/btn-share-kakao.png" width='50' height='50'></image>
+				카카오공유
+				</button>  
+			<button onclick="window.history.back()" type="button" class="reload mt-3 py-2 px-3" ><image src="./img/icons8-1.png" width='50' height='50'></image>다시하기</button>
+			<button onclick="js:screenShot()" type="button" class="reload mt-3 py-2 px-3" ><image src="./img/Download.png" width='50' height='50'></image>결과 이미지 저장</button>
+			<hr>
+		</div>
+	</section> 
+		
+    <script src="./js/data.js" charset="utf-8"></script>
+	<script src="./js/share.js" charset="utf-8"></script>
+	<script> 
+	console.log('result.html')
+	const result = JSON.parse(localStorage.getItem('result'));
+	console.log(result.imgURL);
+		
+	const resultName = document.querySelector('.resultname');
+	resultName.innerHTML = result.name ;
+	
+	const resultDesc = document.querySelector('.resultDesc');
+	resultDesc.innerHTML = result.desc;
+	
+	const resultDisease = document.querySelector('.resultDisease');
+	resultDisease.innerHTML = result.disease;	
+	
+	const img = document.querySelector('img');
+	img.src = result.imgURL; 
+	localStorage.clear();	
+		
+	</script>
+	</div>
+	
+</body>
+
+</html>
+
